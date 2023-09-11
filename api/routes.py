@@ -31,4 +31,14 @@ class Endpoint(Resource):
     @rest_api.marshal_with(response_schema)
     def get(self):
         '''Endpoint to return expected data.'''
-        pass
+        resp = {
+                "slack_name": "Bessong Atabe Junior",
+                "current_day": f"{datetime.now().strftime('%A')}",
+                "utc_time": f'{datetime.now()}',#"2023-08-21T15:04:05Z",
+                "track": "backend",
+                "github_file_url": "https://github.com/username/repo/blob/main/file_name.ext",
+                "github_repo_url": "https://github.com/username/repo",
+                "status_code": f'{HTTPStatus.OK}'
+            }
+
+        return resp, HTTPStatus.OK

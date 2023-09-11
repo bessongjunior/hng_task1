@@ -13,4 +13,7 @@ def client():
     def test_endpoint(client):
         '''Test endpoint and get response.'''
 
-        pass
+        response = client.get('url_endpoint', content_type="application/json")
+        data = json.loads(response.data.decode())
+        assert response.status_code == HTTPStatus.OK
+        assert "The endpoint worked successfully!" # in data["message"]
