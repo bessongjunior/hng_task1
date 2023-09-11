@@ -1,0 +1,37 @@
+name: HNG Task1 Python Application
+
+on:
+  push:
+    branches: [ master ]
+  # pull_request:
+  #   branches: [ dev ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10
+
+    - name: Install dependencies
+      run: |
+        # python -m venv env
+        # source env/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Flask app
+      run: |
+        # export FLASK_APP=your_flask_app.py
+        # flask run
+        # python run.py #also works
+        hypercorn app:run.py
+
+    - name: Run tests
+      run: |
+        pytest ./tests/
