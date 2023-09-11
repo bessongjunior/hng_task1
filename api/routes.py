@@ -68,9 +68,9 @@ class Endpoint(Resource):
         return resp, HTTPStatus.OK
     
 
-# @rest_api.errorhandler
-# def default_error_handler(error):
-#     '''Default error handler'''
+@rest_api.errorhandler
+def default_error_handler(error):
+    '''Default error handler'''
 
-#     rest_api.logger.info(f"An internal server error occurred! This message is to be addressed quickly.")
-#     return {'message': str(error)}, getattr(error, 'code', 500)
+    rest_api.logger.info(f"An internal server error occurred! This message is to be addressed quickly.")
+    return {'message': str(error)}, getattr(error, 'code', 500)
