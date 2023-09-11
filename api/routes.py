@@ -58,7 +58,7 @@ class Endpoint(Resource):
                 "current_day": f"{current_day}",
                 "utc_time": f'{date_time}',#"2023-08-21T15:04:05Z",
                 "track": f"{track}",
-                "github_file_url": "https://github.com/username/repo/blob/main/file_name.ext",
+                "github_file_url": "https://github.com/bessongjunior/hng_task1/blob/master/README.md",
                 "github_repo_url": "https://github.com/bessongjunior/hng_task1",
                 "status_code": 200
             }
