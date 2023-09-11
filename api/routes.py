@@ -63,7 +63,7 @@ class Endpoint(Resource):
                 "status_code": 200
             }
         
-        print(resp)
+        # print(resp)
 
         return resp, HTTPStatus.OK
     
