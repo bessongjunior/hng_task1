@@ -25,4 +25,9 @@
 - Run the app either by entering :: python run.py or :: hypercorn app:run.py
 ```
 
+### API DOCS
+```
+The docs is found at localhost:5000/docs
+```
+
 The end.
